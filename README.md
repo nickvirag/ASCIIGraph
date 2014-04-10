@@ -1,6 +1,6 @@
 # ASCIIGraph
 
-An open-source, command-line graphing program by [Nick Virag](mailto:nick@nickv.co) and [Christopher Horton](mailto:chorton@ltu.edu).
+An open-source, command-line graphing program by [Nick Virag](mailto:nick@nickv.co) and [Christopher Horton](mailto:chorton@ltu.edu). Input a CSV and receive a text-based graph. Windows and Unix compatible. Open-source.
 
 ## Getting Started
 
