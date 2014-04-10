@@ -18,4 +18,4 @@ Push changes
 Name               | Website                            | Email
 -------------------|------------------------------------|------------------------------------------
 Nick Virag         | [http://nickv.co](http://nickv.co) | [nick@nickv.co](nick@nickv.co)
-Christopher Horton |                                    | [chorton@ltu.edu](mailto:chorton@ltu.edu)
+Christopher Horton | [http://christopherkylehorton.blogspot.com/](http://christopherkylehorton.blogspot.com/)                                   | [chorton@ltu.edu](mailto:chorton@ltu.edu)
