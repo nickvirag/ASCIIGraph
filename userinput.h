@@ -24,6 +24,9 @@ namespace userinput
 	
 	// Gets the label for the horizontal axis from the user.
 	string getHLabel();
+	
+	// Gets a character to use for plotting.
+	char getPlottingChar();
 }
 
 #endif

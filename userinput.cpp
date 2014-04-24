@@ -41,3 +41,11 @@ string userinput::getHLabel()
 	getline(cin, label);
 	return label;
 }
+
+char userinput::getPlottingChar()
+{
+	char pc;
+	cout << "Please enter the character you want to use for plotting data: ";
+	cin >> pc;
+	return pc;
+}
