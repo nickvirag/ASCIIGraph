@@ -6,6 +6,8 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 namespace userinput
 {
 	// Gets the number of columns from the user.
