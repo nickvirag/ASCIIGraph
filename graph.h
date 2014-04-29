@@ -19,6 +19,7 @@ public:
 	string getVLabel();
 	string getHLabel();
 	char getPlottingChar();
+	void setData(float value, int row, int col);
 private:
 	vector< vector<float> > data;
 	string title;

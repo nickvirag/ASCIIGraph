@@ -52,3 +52,8 @@ char Graph::getPlottingChar()
 {
 	return plotting_char;
 }
+
+void Graph::setData(float value, int row, int col)
+{
+	data.at(row).at(col) = value;
+}
