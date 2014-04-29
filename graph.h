@@ -15,6 +15,10 @@ public:
 	void setVLabel(string vlabel);
 	void setHLabel(string hlabel);
 	void setPlottingChar(char plotting_char);
+	string getTitle();
+	string getVLabel();
+	string getHLabel();
+	char getPlottingChar();
 private:
 	vector< vector<float> > data;
 	string title;

@@ -32,3 +32,23 @@ void Graph::setPlottingChar(char plotting_char)
 {
 	this->plotting_char = plotting_char;
 }
+
+string Graph::getTitle()
+{
+	return title;
+}
+
+string Graph::getVLabel()
+{
+	return vlabel;
+}
+
+string Graph::getHLabel()
+{
+	return hlabel;
+}
+
+char Graph::getPlottingChar()
+{
+	return plotting_char;
+}
