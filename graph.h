@@ -22,10 +22,13 @@ public:
 	void setData(float value, int row, int col);
 private:
 	vector< vector<float> > data;
+	vector<float> col_max;
+	vector<float> col_min;
 	string title;
 	string vlabel;
 	string hlabel;
 	char plotting_char;
+	void updateColMaxMin(float value);
 };
 
 #endif

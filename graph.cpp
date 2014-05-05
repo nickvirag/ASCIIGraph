@@ -11,6 +11,8 @@ void Graph::setDimensions(int rows, int cols)
 	{
 		data.at(i).resize(cols);
 	}
+	col_max.resize(cols);
+	col_min.resize(cols);
 }
 
 void Graph::setTitle(string title)
@@ -56,4 +58,13 @@ char Graph::getPlottingChar()
 void Graph::setData(float value, int row, int col)
 {
 	data.at(row).at(col) = value;
+	updateColMaxMin(col, value);
+}
+
+void Graph::updateColMaxMin(int col, float value)
+{
+	if(value > col_max.at(col))
+		col_max.at(col) = value;
+	if(value < col_min.at(col))
+		col_min.at(col) = value;
 }
