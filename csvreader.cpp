@@ -9,7 +9,37 @@ CSVReader::CSVReader()
 void CSVReader::load(*Graph graph, string filename)
 {
 	fstream input;
-	fstream.open(filename.c_str());
+	input.open(filename.c_str());
+	if(input)
+	{
+		string record;
+		int columns;
+		
+		getline(input, record);
+		columns = determineColumns(record);
+		getline(input, record);
+		while(input)
+		{
+			addRecordToGraph(graph, record);
+			getline(input, record);
+		}
+	}
+	else
+		cout << "Could not open the CSV file for reading." << endl;
+	input.close();
+}
+
+int CSVReader::determineColumns(string record)
+{
+	// Report the number of columns as the number of commas + 1
+	int commas = 0;
+	for(unsigned int i = 0; i < record.size(); i++)
+		if(record.at(i) == ",")
+			commas++;
+	return commas + 1;
+}
+
+void CSVReader::addRecordToGraph(*Graph graph, string record)
+{
 	// TODO
-	fstream.close();
 }
