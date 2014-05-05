@@ -3,6 +3,7 @@
 	Written by Christopher K. Horton and Nicholas Virag.
 */
 
+#include "graph.h"
 #include "userinput.h"
 
 int main(int argc, const char* argv[])

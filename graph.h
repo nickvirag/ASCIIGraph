@@ -28,7 +28,7 @@ private:
 	string vlabel;
 	string hlabel;
 	char plotting_char;
-	void updateColMaxMin(float value);
+	void updateColMaxMin(int col, float value);
 };
 
 #endif
