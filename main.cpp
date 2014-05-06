@@ -34,8 +34,8 @@ int main(int argc, const char* argv[])
 	
 	// Get graph data
 	Graph* graph = new Graph();
-	CSVReader reader = new CSVReader();
-	reader.load(graph, filename);
+	CSVReader* reader = new CSVReader();
+	reader->load(graph, filename);
 	delete reader;
 	
 	// Get graph details

@@ -34,7 +34,7 @@ int CSVReader::determineColumns(string record)
 	// Report the number of columns as the number of commas + 1
 	int commas = 0;
 	for(unsigned int i = 0; i < record.size(); i++)
-		if(record.at(i) == ",")
+		if(record.at(i) == ',')
 			commas++;
 	return commas + 1;
 }
@@ -43,13 +43,15 @@ void CSVReader::addRecordToGraph(Graph* graph, string record)
 {
 	// Split the record up according to commas and convert each field to float
 	vector<float> fields;
+	char* record_c = new char[record.length() + 1];
 	char* field_token;
 	
-	field_token = strtok(record.c_str(), ",");
+	strcpy(record_c, record.c_str());
+	field_token = strtok(record_c, ",");
 	while(field_token != NULL)
 	{
 		fields.push_back(atof(field_token));
-		field_token = strtok(record.c_str(), ",");
+		field_token = strtok(NULL, ",");
 	}
 	
 	graph->addRecord(fields);
