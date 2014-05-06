@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <sstream>
 #include "pair.h"
 
 using namespace std;
@@ -21,6 +22,8 @@ public:
 	char getPlottingChar();
 	void addData(float x, float y);
 	void addData(Pair record);
+	void setConsoleDimensions( int w, int h );
+	string getGraph( );
 private:
 	vector<Pair> data;
 	float x_max;
@@ -33,6 +36,8 @@ private:
 	char plotting_char;
 	void updateMaxMin(float x, float y);
 	void incrementRows();	// Increase number of rows by one
+	int width;
+	int height;
 };
 
 #endif
