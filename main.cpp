@@ -52,5 +52,7 @@ int main(int argc, const char* argv[])
 	
 	// TODO: Print completed graph
 	
+	delete graph;
+	
 	return 0;
 }
