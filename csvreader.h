@@ -11,6 +11,8 @@
 
 using namespace std;
 
+class CSVReadException : public exception {};
+
 class CSVReader
 {
 public:
