@@ -13,10 +13,7 @@ void CSVReader::load(Graph* graph, string filename)
 	if(input)
 	{
 		string record;
-		int columns;
 		
-		getline(input, record);
-		columns = determineColumns(record);
 		getline(input, record);
 		while(input)
 		{
