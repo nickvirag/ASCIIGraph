@@ -4,6 +4,7 @@
 */
 
 #include <iostream>
+#include <fstream>
 #include <string>
 #include "csvreader.h"
 #include "graph.h"
@@ -13,7 +14,7 @@ using namespace std;
 
 int main(int argc, const char* argv[])
 {
-	string filename, title, vlabel, hlabel;
+	string filename, title, vlabel, hlabel, width, height, write;
 	
 	switch(argc)
 	{
@@ -45,14 +46,30 @@ int main(int argc, const char* argv[])
 	getline(cin, vlabel);
 	cout << "Please enter a horizontal axis label: ";
 	getline(cin, hlabel);
+	cout << "Please enter graph width (in characters): ";
+	getline(cin, width);
+	cout << "Please enter graph height (in characters): ";
+	getline(cin, height);
 	
 	graph->setTitle(title);
 	graph->setVLabel(vlabel);
 	graph->setHLabel(hlabel);
+	graph->setConsoleDimensions( atoi( width.c_str( ) ), atoi( height.c_str( ) ) );
+
+	cout << "Write to file? (Y/N): ";
+	getline(cin, write);
+	if( write == "Y" || write == "y" ){
+		cout << "Enter file name and path: ";
+		getline( cin, write );
+		ofstream file;
+		file.open( write.c_str( ) );
+		file << graph->getGraph( );
+		file.close( );
+	}
 	
 	cout << '\n' << graph->getGraph( );
 	
-	//delete graph;
+	delete graph;
 	
 	return 0;
 }
