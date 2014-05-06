@@ -20,6 +20,7 @@ public:
 	string getHLabel();
 	char getPlottingChar();
 	void setData(float value, int row, int col);
+	void addRecord(vector<float>& record);	// Adds a row to the graph
 private:
 	vector< vector<float> > data;
 	vector<float> col_max;
@@ -27,8 +28,11 @@ private:
 	string title;
 	string vlabel;
 	string hlabel;
+	int num_rows;
+	int num_cols;
 	char plotting_char;
 	void updateColMaxMin(int col, float value);
+	void incrementRows();	// Increase number of rows by one
 };
 
 #endif
