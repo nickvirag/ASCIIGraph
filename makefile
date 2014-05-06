@@ -1,6 +1,6 @@
 # Makefile for ASCIIGraph.
 
-OBJECTS=main.o userinput.o graph.o
+OBJECTS=main.o userinput.o graph.o csvreader.o
 EXECUTABLE=ASCIIGraph
 
 all: $(EXECUTABLE)
