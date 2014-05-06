@@ -75,12 +75,11 @@ void Graph::addRecord(vector<float>& record)
 {
 	incrementRows();
 	for(unsigned int i = 0; i < num_cols; i++)
-		data.at(data.length() - 1).at(i) = record.at(i);
+		data.at(data.size() - 1).at(i) = record.at(i);
 }
 
 void Graph::incrementRows()
 {
-	data.resize(data.length() + 1);
-	data.at(data.length() - 1).resize(num_cols);
-	num_rows++;
+	data.resize(++num_rows);
+	data.at(data.size() - 1).resize(num_cols);
 }

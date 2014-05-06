@@ -6,7 +6,7 @@ CSVReader::CSVReader()
 {
 }
 
-void CSVReader::load(*Graph graph, string filename)
+void CSVReader::load(Graph* graph, string filename)
 {
 	fstream input;
 	input.open(filename.c_str());
@@ -39,7 +39,7 @@ int CSVReader::determineColumns(string record)
 	return commas + 1;
 }
 
-void CSVReader::addRecordToGraph(*Graph graph, string record)
+void CSVReader::addRecordToGraph(Graph* graph, string record)
 {
 	// Split the record up according to commas and convert each field to float
 	vector<float> fields;

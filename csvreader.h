@@ -14,10 +14,10 @@ class CSVReader
 {
 public:
 	CSVReader();
-	load(*Graph graph, string filename);	// Loads data from provided CSV file into graph
+	void load(Graph* graph, string filename);	// Loads data from provided CSV file into graph
 private:
 	int determineColumns(string record);	// Determine the number of columns from provided line
-	void addRecordToGraph(*Graph graph, string record);	// Adds this record to the graph
+	void addRecordToGraph(Graph* graph, string record);	// Adds this record to the graph
 };
 
 #endif

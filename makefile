@@ -17,5 +17,8 @@ userinput.o: userinput.cpp userinput.h
 graph.o: graph.cpp graph.h
 	g++ -c graph.cpp graph.h
 
+csvreader.o: csvreader.cpp csvreader.h
+	g++ -c csvreader.cpp csvreader.h
+
 clean:
 	rm -rf $(EXECUTABLE) *.o *.gch

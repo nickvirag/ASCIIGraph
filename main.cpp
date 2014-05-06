@@ -3,6 +3,7 @@
 	Written by Christopher K. Horton and Nicholas Virag.
 */
 
+#include "csvreader.h"
 #include "graph.h"
 #include "userinput.h"
 
