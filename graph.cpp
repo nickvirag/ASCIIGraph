@@ -13,6 +13,8 @@ void Graph::setDimensions(int rows, int cols)
 	}
 	col_max.resize(cols);
 	col_min.resize(cols);
+	num_rows = rows;
+	num_cols = cols;
 }
 
 void Graph::setTitle(string title)
@@ -67,4 +69,18 @@ void Graph::updateColMaxMin(int col, float value)
 		col_max.at(col) = value;
 	if(value < col_min.at(col))
 		col_min.at(col) = value;
+}
+
+void Graph::addRecord(vector<float>& record)
+{
+	incrementRows();
+	for(unsigned int i = 0; i < num_cols; i++)
+		data.at(data.length() - 1).at(i) = record.at(i);
+}
+
+void Graph::incrementRows()
+{
+	data.resize(data.length() + 1);
+	data.at(data.length() - 1).resize(num_cols);
+	num_rows++;
 }
