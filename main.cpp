@@ -50,9 +50,9 @@ int main(int argc, const char* argv[])
 	graph->setVLabel(vlabel);
 	graph->setHLabel(hlabel);
 	
-	// TODO: Print completed graph
+	cout << '\n' << graph->getGraph( );
 	
-	delete graph;
+	//delete graph;
 	
 	return 0;
 }
