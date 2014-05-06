@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 #include "graph.h"
+#include "pair.h"
 
 using namespace std;
 

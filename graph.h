@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include "pair.h"
 
 using namespace std;
 
@@ -10,7 +11,6 @@ class Graph
 {
 public:
 	Graph();
-	void setDimensions(int rows, int cols);
 	void setTitle(string title);
 	void setVLabel(string vlabel);
 	void setHLabel(string hlabel);
@@ -19,19 +19,19 @@ public:
 	string getVLabel();
 	string getHLabel();
 	char getPlottingChar();
-	void setData(float value, int row, int col);
-	void addRecord(vector<float>& record);	// Adds a row to the graph
+	void addData(float x, float y);
+	void addData(Pair record);
 private:
-	vector< vector<float> > data;
-	vector<float> col_max;
-	vector<float> col_min;
+	vector<Pair> data;
+	float x_max;
+	float x_min;
+	float y_max;
+	float y_min;
 	string title;
 	string vlabel;
 	string hlabel;
-	int num_rows;
-	int num_cols;
 	char plotting_char;
-	void updateColMaxMin(int col, float value);
+	void updateMaxMin(float x, float y);
 	void incrementRows();	// Increase number of rows by one
 };
 

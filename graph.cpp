@@ -2,19 +2,7 @@
 
 Graph::Graph()
 {
-}
-
-void Graph::setDimensions(int rows, int cols)
-{
-	data.resize(rows);
-	for(int i = 0; i < rows; i++)
-	{
-		data.at(i).resize(cols);
-	}
-	col_max.resize(cols);
-	col_min.resize(cols);
-	num_rows = rows;
-	num_cols = cols;
+	plotting_char = '*';
 }
 
 void Graph::setTitle(string title)
@@ -57,29 +45,28 @@ char Graph::getPlottingChar()
 	return plotting_char;
 }
 
-void Graph::setData(float value, int row, int col)
-{
-	data.at(row).at(col) = value;
-	updateColMaxMin(col, value);
-}
-
-void Graph::updateColMaxMin(int col, float value)
-{
-	if(value > col_max.at(col))
-		col_max.at(col) = value;
-	if(value < col_min.at(col))
-		col_min.at(col) = value;
-}
-
-void Graph::addRecord(vector<float>& record)
+void Graph::addData(float x, float y)
 {
 	incrementRows();
-	for(unsigned int i = 0; i < num_cols; i++)
-		data.at(data.size() - 1).at(i) = record.at(i);
+	data.at(data.size() - 1).x = x;
+	data.at(data.size() - 1).y = y;
+	updateMaxMin(x, y);
+}
+
+void Graph::addData(Pair record)
+{
+	addData(record.x, record.y);
+}
+
+void Graph::updateMaxMin(float x, float y)
+{
+	x_max = x > x_max ? x : x_max;
+	x_min = x < x_min ? x : x_min;
+	y_max = y > y_max ? y : y_max;
+	y_min = x < y_min ? y : y_min;
 }
 
 void Graph::incrementRows()
 {
-	data.resize(++num_rows);
-	data.at(data.size() - 1).resize(num_cols);
+	data.resize(data.size() + 1);
 }
