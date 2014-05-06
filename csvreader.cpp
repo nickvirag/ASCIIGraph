@@ -22,7 +22,10 @@ void CSVReader::load(Graph* graph, string filename)
 		}
 	}
 	else
+	{
 		cout << "Could not open the CSV file for reading." << endl;
+		throw CSVReadException();
+	}
 	input.close();
 }
 

@@ -35,7 +35,15 @@ int main(int argc, const char* argv[])
 	// Get graph data
 	Graph* graph = new Graph();
 	CSVReader* reader = new CSVReader();
-	reader->load(graph, filename);
+	try
+	{
+		reader->load(graph, filename);
+	}
+	catch(exception& e)
+	{
+		cout << "Cannot continue; unable to load data for graphing." << endl;
+		return 2;
+	}
 	delete reader;
 	
 	// Get graph details
